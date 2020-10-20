@@ -5,14 +5,16 @@ close all; clear all; clc;
 % Model the seismicity rate as a function of magnitude according to the catalogue
 % 50 km within the NCU located. from CWB catalog
 %   Code date: 2020 - 10 - 15
+% Files directory:
+% https://drive.google.com/drive/folders/1QRxZhNDNAg8bV7yukzkuLbW_1EYuBClh?usp=sharing
 % -------------------------------------------------------------------------
 % Set NCU location (google map)
 lat0 = 24.967694;
 long0 = 121.195037;
 % Load the input data
-%filename = "CWB catalog (1900-2016).xlsx";
+filename = "CWB catalog (1900-2016).xlsx";
 % Select catalog function
-%select_cat(lat0,long0,50,filename,1);
+select_cat(lat0,long0,50,filename,1);
 %
 data = load('out_cat.mat','-ascii');
 % statistic for
