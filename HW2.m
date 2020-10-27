@@ -12,9 +12,9 @@ close all; clear all; clc;
 lat0 = 24.967694;
 long0 = 121.195037;
 % Load the input data
-filename = "CWB catalog (1900-2016).xlsx";
+%filename = "CWB catalog (1900-2016).xlsx";
 % Select catalog function
-select_cat(lat0,long0,50,filename,1);
+%select_cat(lat0,long0,50,filename,1);
 %
 data = load('out_cat.mat','-ascii');
 % statistic for
@@ -112,6 +112,8 @@ close(h2);
      'MarkerEdgeColor',[0.0,0.0,0.5],...
      'MarkerFaceColor',[0.0,0.0,0.5]);grid on; hold on;
 semilogy(mag1,yfit1,'r.-','MarkerSize',15,'LineWidth',1);
+ txt = {"a = " c1(1) "b = " c1(2)};
+ t1 = text(1.0,1.0,['\rightarrow' txt],'FontSize',14);
  xlabel('Magnitude','FontSize',12,'FontWeight','bold',...
      'Color','b','FontName','Times New Roman'); 
  ylabel('Annual rate R^2','FontSize',12,'FontWeight',...
@@ -131,6 +133,9 @@ semilogy(mag2,yfit2,'r.-','MarkerSize',15,'LineWidth',1);
  ylabel('Annual rate R^2','FontSize',12,'FontWeight',...
      'bold','Color','b','FontName','Times New Roman')
  legend('observation data','linear fitting model')
+ txt = {"a = " c2(1) "b = " c2(2)};
+ t = text(2.5,1.5,['\rightarrow' txt],'FontSize',14);
+ 
  title('Final catalog','FontSize',14,'color','blue','FontName',...
      'Times New Roman','Fontweight','Bold')
  suptitle('Fitting the seismic rate model with the catalogs')
